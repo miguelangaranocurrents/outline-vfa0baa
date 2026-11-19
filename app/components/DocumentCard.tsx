@@ -82,8 +82,8 @@ function DocumentCard(props: Props) {
     [pin]
   );
 
-  // Keep the drag sensor from claiming the pointer, otherwise holding the
-  // button for longer than the activation delay starts a drag
+  // Keep the drag sensor from claiming the pointer, otherwise moving while
+  // pressing the unpin button would start a drag of the whole card
   const handleActionsPointerDown = useCallback((ev: React.PointerEvent) => {
     ev.stopPropagation();
   }, []);
